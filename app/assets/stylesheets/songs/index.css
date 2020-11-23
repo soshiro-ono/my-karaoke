@@ -1,0 +1,26 @@
+
+
+.icon{
+  display: flex;
+  justify-content: center;
+}
+
+.detail-table{
+  display: flex;
+  justify-content: center;
+}
+
+.detail-value {
+  padding: 10px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  width: 200px;
+}
+
+.detail-song {
+  padding: 0px 10px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  width: 150px;
+}
