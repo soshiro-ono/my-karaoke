@@ -1,0 +1,36 @@
+.song-main{
+  /* width: 70vw; */
+  /* min-width: 350px; */
+  padding: 10vh 15vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* .spot-form{
+  min-width: 350px;
+  padding: 50px;
+  background-color: #f8f8f8;
+} */
+
+.songs-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 800px;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  background-color: #f8f8f8;
+}
+
+.song-text{
+  width: 600px;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
