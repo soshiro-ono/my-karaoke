@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<div class="contents row">
+  <% @songs.each do |song| %>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-song">バンド</th>
+          <td class="detail-value">曲</td>
+        </tr>
+
+        <tr>
+          <th class="detail-song"><%= @song.artist %></th>
+          <td class="detail-value"><%= @song.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+
+<h1>aaa</h1>
+<%= render "shared/footer" %>
