@@ -22,8 +22,17 @@ class SongsController < ApplicationController
   def show
   end
 
-  # def edit
-  # end
+  def edit
+  end
+
+
+  def update
+    if @song.update(song_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
 
   def destroy
     if @song.destroy
