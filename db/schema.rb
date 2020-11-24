@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_081954) do
     t.bigint "user_id", null: false
     t.string "title", null: false
     t.string "artist", null: false
+    t.integer "genre_id", null: false
+    t.integer "scene_id", null: false
     t.text "memo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,18 +1,29 @@
 <%= render "shared/header" %>
 
-<div class="song-show">
-  <div class='spot-img-content'>
-    <%= @song.artist %>
-    <%= @song.title %>
-  </div>
+<div class="main">
+  <div class="song-show">
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-song">アーティスト名</th>
+          <th class="detail-value">曲名</td>
+        </tr>
 
-  <% if user_signed_in? %>
-    <% if @song.user_id == current_user.id %>
-      <%= link_to '投稿の編集', edit_song_path, method: :get, class: "song-red-btn" %>
-      <p class='or-text'>or</p>
-      <%= link_to '削除', song_path, method: :delete, class:'song-destroy' %>
+        <tr>
+          <td class="detail-song"><%= @song.artist %></td> 
+          <td class="detail-value"><%= @song.title %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <% if user_signed_in? %>
+      <% if @song.user_id == current_user.id %>
+        <%= link_to '投稿の編集', edit_song_path, method: :get, class: "song-red-btn" %>
+        <p class='or-text'>or</p>
+        <%= link_to '削除', song_path, method: :delete, class:'song-destroy' %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
 <%= render "shared/footer" %>
