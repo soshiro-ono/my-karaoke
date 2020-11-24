@@ -20,7 +20,7 @@
             <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
             <h2>シチュエーション</h2>
             <%= f.collection_select(:scene_id, Scene.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
-            <h2>アーティスト性別</h2>
+            <h2>ボーカル</h2>
             <%= f.collection_select(:gender_id, Gender.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
           </div>
         </div>
