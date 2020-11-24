@@ -45,7 +45,7 @@ class SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:title, :artist, :memo, :genre_id, :scene_id).merge(user_id: current_user.id)
+    params.require(:song).permit(:title, :artist, :memo, :genre_id, :scene_id, :gender_id).merge(user_id: current_user.id)
   end
 
   def set_spot
