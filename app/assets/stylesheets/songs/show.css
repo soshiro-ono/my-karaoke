@@ -13,6 +13,26 @@
   padding: 5vh 0;
 }
 
+.tbody{
+  width: 80%;
+}
+
+.show-detail-value {
+  padding: 30px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.show-detail-song {
+  padding: 30px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  width: 400px;
+}
+
+
 .song-red-btn{
   background-color: #ea352d;
   font-size: 24px;

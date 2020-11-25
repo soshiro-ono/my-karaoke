@@ -18,10 +18,12 @@
           <div class="pulldown">
             <h2>ジャンル</h2>
             <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
-            <h2>シチュエーション</h2>
-            <%= f.collection_select(:scene_id, Scene.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
+            <h2>キーの高さ</h2>
+            <%= f.collection_select(:interval_id, Interval.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
             <h2>アーティスト性別</h2>
             <%= f.collection_select(:gender_id, Gender.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
+            <h2>知名度</h2>
+            <%= f.collection_select(:populur_id, Populur.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
           </div>
         </div>
 

@@ -1,7 +1,33 @@
+.search-keyword-index{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.search-pulldown-index{
+  display: flex;
+  justify-content: center;
+}
+
+.category-select-index{
+  margin-right: 40px;
+}
 
 .icon{
   display: flex;
   justify-content: center;
+}
+
+.song-btn1{
+  margin-top: 30px;
+  background-color: aqua;
+  padding: 16px 40px;
+  border-radius: 20px;
+}
+
+.main-content{
+  margin: 0px 100px;
 }
 
 .detail-table{
@@ -9,17 +35,25 @@
   justify-content: center;
 }
 
-.detail-value {
+.index-detail-value {
   padding: 10px;
   border: 1px solid #dedede;
   font-size: 14px;
   width: 200px;
 }
 
-.detail-song {
+.index-detail-song {
   padding: 0px 10px;
   border: 1px solid #dedede;
   font-size: 14px;
   text-align: center;
   width: 150px;
+}
+
+.grid{
+  display: grid;
+  gap:16px;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
 }

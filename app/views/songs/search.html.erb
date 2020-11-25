@@ -16,42 +16,36 @@
 
       <%= f.label :gerne_id_eq, 'ジャンル：'  %>
       <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
-
-      <%= f.label :populur_id_eq, '知名度：'  %>
-      <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
     </div>
     <% end  %>
 
-    <%# 新規投稿 %>
+    <%# カメラ新規投稿 %>
   <div class="icon">
-    <div class='song-btn1'>
-      <a href="/songs/new">
-        曲を登録する
-      </a>
+    <div class='purchase-btn1'>
+      検索結果
     </div>
   </div>
-    <%# 新規投稿 %>
-  <div class="main-content">
-    <div class="grid">
-      <% @songs.each do |song| %>
-        <table class="detail-table">
-          <tbody>
-            <tr>
-              <th class="index-detail-song">アーティスト名</th>
-              <th class="index-detail-value">曲名</td>
-            </tr>
-            <tr>
-              <td class="index-detail-song"><%= song.artist %></td> 
-              <td class="index-detail-value">
-                <%= link_to song_path(song.id) do %>
-                  <%= song.title %>
-                <% end %>
-              </td> 
-            </tr>
-          </tbody>
-        </table>
-      <% end %>
-    </div>
+    <%# カメラ新規投稿 %>
+
+  <div class="grid">
+    <% @songs.each do |song| %>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="index-detail-song">アーティスト名</th>
+            <th class="index-detail-value">曲名</td>
+          </tr>
+          <tr>
+            <td class="index-detail-song"><%= song.artist %></td> 
+            <td class="index-detail-value">
+              <%= link_to song_path(song.id) do %>
+                <%= song.title %>
+              <% end %>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
   </div>
 </div>
 
