@@ -5,16 +5,38 @@
     <table class="detail-table">
       <tbody>
         <tr>
-          <th class="detail-song">アーティスト名</th>
-          <th class="detail-value">曲名</td>
+          <th class="show-detail-value">アーティスト</th>
+          <td class="show-detail-song"><%= @song.artist %></td> 
         </tr>
 
         <tr>
-          <td class="detail-song"><%= @song.artist %></td> 
-          <td class="detail-value"><%= @song.title %></td>
+          <th class="show-detail-value">曲タイトル</th>
+          <td class="show-detail-song"><%= @song.title %></td>
+        </tr>
+
+        <tr>
+          <th class="show-detail-value">ジャンル</th>
+          <td class="show-detail-song"><%= @song.genre.name %></td>
+        </tr>
+
+        <tr>
+          <th class="show-detail-value">性別</th>
+          <td class="show-detail-song"><%= @song.gender.name %></td>
+        </tr>
+
+        <tr>
+          <th class="show-detail-value">キー</th>
+          <td class="show-detail-song"><%= @song.interval.name %></td>
+        </tr>
+
+        <tr>
+          <th class="show-detail-value">メモ</th>
+          <td class="show-detail-song"><%= @song.memo %></td>
         </tr>
       </tbody>
     </table>
+    
+
 
     <% if user_signed_in? %>
       <% if @song.user_id == current_user.id %>

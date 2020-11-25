@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SceneTest < ActiveSupport::TestCase
+class PopulurTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
