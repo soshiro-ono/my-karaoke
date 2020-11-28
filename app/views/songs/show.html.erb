@@ -35,6 +35,13 @@
         </tr>
       </tbody>
     </table>
+
+
+    <% if current_user.already_favorited?(@song) %>
+      <%= button_to 'お気に入りを取り消す', song_favorite_path(@song), method: :delete %>
+    <% else %>
+      <%= button_to 'お気に入り', song_favorites_path(@song) %>
+    <% end %>
     
 
 

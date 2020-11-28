@@ -1,0 +1,15 @@
+<%= render "shared/header" %>
+
+<h2>投稿内容</h2>
+<% @user.songs.each do |song| %>
+  <a href="/songs/<%= song.id %>"><%= song.title %></a>
+  <hr>
+<% end %>
+
+<h3>お気に入りしている投稿</h3>
+<% @user.favorited_songs.each do |song| %>
+  <%= song.user.nickname %>
+  <%= song.title %>
+<% end %>
+
+<%= render "shared/footer" %>
