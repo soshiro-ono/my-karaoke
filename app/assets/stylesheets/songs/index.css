@@ -27,7 +27,8 @@
 }
 
 .main-content{
-  margin: 0px 100px;
+  width: 80%;
+  justify-content: center;
 }
 
 .detail-table{
