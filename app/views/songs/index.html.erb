@@ -31,14 +31,12 @@
         曲を登録する
       </a>
     </div>
-    <%# <div class='song-btn1'>
-      <a href="/users/id">
-        マイページへ
-      </a>
-    </div> %>
+
+    <div class="song-btn1">
       <%= link_to user_path(current_user.id) do %>
         マイページへ
       <% end %>
+    </div>
     <% end %>
   </div>
     <%# 新規投稿 %>
