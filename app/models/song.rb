@@ -1,5 +1,9 @@
 class Song < ApplicationRecord
   belongs_to :user
+  has_many :favorited_users, through: :favorites, source: :user
+  has_many :favorites, dependent: :destroy
+  # いらないかも
+  # 投稿が誰にいいねされているのかを簡単に取得できるようになります。
 
   # アクティブハッシュのアソシエーション
   extend ActiveHash::Associations::ActiveRecordExtensions

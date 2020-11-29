@@ -23,12 +23,23 @@
     <% end  %>
 
     <%# 新規投稿 %>
+
+  <% if user_signed_in? %>
   <div class="icon">
     <div class='song-btn1'>
       <a href="/songs/new">
         曲を登録する
       </a>
     </div>
+    <%# <div class='song-btn1'>
+      <a href="/users/id">
+        マイページへ
+      </a>
+    </div> %>
+      <%= link_to user_path(current_user.id) do %>
+        マイページへ
+      <% end %>
+    <% end %>
   </div>
     <%# 新規投稿 %>
   <div class="main-content">
