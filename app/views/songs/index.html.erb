@@ -23,6 +23,8 @@
     <% end  %>
 
     <%# 新規投稿 %>
+
+  <% if user_signed_in? %>
   <div class="icon">
     <div class='song-btn1'>
       <a href="/songs/new">
@@ -34,6 +36,10 @@
         マイページへ
       </a>
     </div> %>
+      <%= link_to user_path(current_user.id) do %>
+        マイページへ
+      <% end %>
+    <% end %>
   </div>
     <%# 新規投稿 %>
   <div class="main-content">

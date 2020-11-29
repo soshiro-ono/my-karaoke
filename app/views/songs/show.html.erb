@@ -37,19 +37,19 @@
     </table>
 
 
-    <% if current_user.already_favorited?(@song) %>
-      <%= button_to 'お気に入りを取り消す', song_favorite_path(@song), method: :delete %>
-    <% else %>
-      <%= button_to 'お気に入り', song_favorites_path(@song) %>
-    <% end %>
-    
-
 
     <% if user_signed_in? %>
+      <% if current_user.already_favorited?(@song) %>
+        <%= button_to '気になるを取り消す', song_favorite_path(@song), method: :delete %>
+      <% else %>
+        <%= button_to '気になる', song_favorites_path(@song) %>
+      <% end %>
+    
+
       <% if @song.user_id == current_user.id %>
         <%= link_to '投稿の編集', edit_song_path, method: :get, class: "song-red-btn" %>
         <p class='or-text'>or</p>
-        <%= link_to '削除', song_path, method: :delete, class:'song-destroy' %>
+        <%= link_to '削除', song_path, method: :delete, class:'song-destroy',data: {confirm: "本当に削除しますか？"} %>
       <% end %>
     <% end %>
   </div>

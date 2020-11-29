@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   # get 'users/show'
   devise_for :users
   root to: 'songs#index'
-  
-  resources :users, only: [:show]
+
+  resources :users, only: [:show] do
+    collection do
+      get 'search'
+    end
+  end
   resources :songs do
     resources :favorites, only: [:create, :destroy]
     collection do

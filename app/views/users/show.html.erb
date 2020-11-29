@@ -1,12 +1,51 @@
 <%= render "shared/header" %>
 
-<h2>投稿内容</h2>
-<% @user.songs.each do |song| %>
-  <a href="/songs/<%= song.id %>"><%= song.title %></a>
-  <hr>
-<% end %>
+<div class="contents row">
+  <%= search_form_for @p, url: search_users_path do |f| %>
+    <div class = "search-keyword-index">
+      <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
+      <%= f.submit '検索' %>
+    </div>
 
-<h3>お気に入りしている投稿</h3>
+    <div class = "search-pulldown-index">
+      <%= f.label :interval_eq, 'キー：'  %>
+      <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+
+      <%= f.label :gender_id_eq, '性別：'  %>
+      <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+
+      <%= f.label :gerne_id_eq, 'ジャンル：'  %>
+      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+
+      <%= f.label :populur_id_eq, '知名度：'  %>
+      <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+    </div>
+  <% end  %>
+</div>
+
+<h2>投稿内容</h2>
+<div class="grid">
+  <% @songs.each do |song| %>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="index-detail-song">アーティスト名</th>
+          <th class="index-detail-value">曲名</td>
+        </tr>
+        <tr>
+          <td class="index-detail-song"><%= song.artist %></td> 
+          <td class="index-detail-value">
+            <%= link_to song_path(song.id) do %>
+              <%= song.title %>
+            <% end %>
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+
+<h3>気になる投稿</h3>
 <% @user.favorited_songs.each do |song| %>
   <%= song.user.nickname %>
   <%= song.title %>
