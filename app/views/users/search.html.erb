@@ -6,25 +6,27 @@
   </div>
 </div>
 
-<div class="grid">
-  <% @songs.each do |song| %>
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="index-detail-song">アーティスト名</th>
-          <th class="index-detail-value">曲名</td>
-        </tr>
-        <tr>
-          <td class="index-detail-song"><%= song.artist %></td> 
-          <td class="index-detail-value">
-            <%= link_to song_path(song.id) do %>
-              <%= song.title %>
-            <% end %>
-          </td> 
-        </tr>
-      </tbody>
-    </table>
-  <% end %>
+<div class="main-content">
+  <div class="grid">
+    <% @songs.each do |song| %>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="index-detail-song">アーティスト名</th>
+            <th class="index-detail-value">曲名</td>
+          </tr>
+          <tr>
+            <td class="index-detail-song"><%= song.artist %></td> 
+            <td class="index-detail-value">
+              <%= link_to song_path(song.id) do %>
+                <%= song.title %>
+              <% end %>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </div>
 
 <%= render "shared/footer" %>
