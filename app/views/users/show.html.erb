@@ -35,32 +35,52 @@
   <% end %>
 <% end %>
 
-<h2>投稿内容</h2>
-<div class="grid">
-  <% @songs.each do |song| %>
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="index-detail-song">アーティスト名</th>
-          <th class="index-detail-value">曲名</td>
-        </tr>
-        <tr>
-          <td class="index-detail-song"><%= song.artist %></td> 
-          <td class="index-detail-value">
-            <%= link_to song_path(song.id) do %>
-              <%= song.title %>
-            <% end %>
-          </td> 
-        </tr>
-      </tbody>
-    </table>
-  <% end %>
+<div class="main-content">
+  <h2>投稿内容</h2>
+  <div class="grid">
+    <% @songs.each do |song| %>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="index-detail-song">アーティスト名</th>
+            <th class="index-detail-value">曲名</td>
+          </tr>
+          <tr>
+            <td class="index-detail-song"><%= song.artist %></td> 
+            <td class="index-detail-value">
+              <%= link_to song_path(song.id) do %>
+                <%= song.title %>
+              <% end %>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+
+<%# ここからお気に入り一覧 %>
+  <h2>あなたのお気に入り</h2>
+  <div class="grid">
+    <% @user.favorited_songs.each do |song| %>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="index-detail-song">アーティスト名</th>
+            <th class="index-detail-value">曲名</td>
+          </tr>
+          <tr>
+            <td class="index-detail-song"><%= song.artist %></td> 
+            <td class="index-detail-value">
+              <%= link_to song_path(song.id) do %>
+                <%= song.title %>
+              <% end %>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </div>
 
-<h3>気になる投稿</h3>
-<% @user.favorited_songs.each do |song| %>
-  <%= song.user.nickname %>
-  <%= song.title %>
-<% end %>
 
 <%= render "shared/footer" %>
