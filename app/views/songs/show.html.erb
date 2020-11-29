@@ -5,6 +5,15 @@
     <table class="detail-table">
       <tbody>
         <tr>
+          <th class="show-detail-value">投稿者</th>
+          <td class="show-detail-song">
+            <%= link_to user_path(@song.user_id) do %>
+              <%= @song.user.nickname %>
+            <% end %>
+          </td> 
+        </tr>
+
+        <tr>
           <th class="show-detail-value">アーティスト</th>
           <td class="show-detail-song"><%= @song.artist %></td> 
         </tr>

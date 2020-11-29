@@ -16,6 +16,6 @@ class UsersController < ApplicationController
   
   private
   def search_song
-    @p = Song.where(user_id: @user).ransack(params[:q])  # 検索オブジェクトを生成
+    @p = Song.where(user_id: current_user.id).ransack(params[:q])  # 検索オブジェクトを生成
   end
 end

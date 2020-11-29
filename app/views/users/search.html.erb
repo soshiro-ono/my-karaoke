@@ -1,3 +1,11 @@
+<%= render "shared/header" %>
+
+<div class="icon">
+  <div class='purchase-btn1'>
+    検索結果
+  </div>
+</div>
+
 <div class="grid">
   <% @songs.each do |song| %>
     <table class="detail-table">
@@ -18,3 +26,5 @@
     </table>
   <% end %>
 </div>
+
+<%= render "shared/footer" %>

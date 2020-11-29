@@ -23,6 +23,18 @@
   <% end  %>
 </div>
 
+<% if user_signed_in? %>
+  <% if @user.id == current_user.id %>
+    <div class="icon">
+      <div class='song-btn1'>
+        <a href="/songs/new">
+          曲を登録する
+        </a>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 <h2>投稿内容</h2>
 <div class="grid">
   <% @songs.each do |song| %>
