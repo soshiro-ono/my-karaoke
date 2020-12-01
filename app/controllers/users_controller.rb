@@ -4,12 +4,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @songs = @user.songs
+    @songs = @user.songs.page(params[:page]).per(15)
     # モデルのアソシエーションがhas manyだから
   end
 
   def search
-    @songs = @p.result
+    @songs = @p.result.page(params[:page]).per(15)
   end
 
 

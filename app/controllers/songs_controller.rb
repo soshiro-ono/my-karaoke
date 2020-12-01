@@ -5,7 +5,7 @@ class SongsController < ApplicationController
 
 
   def index
-    @songs = Song.all
+    @songs = Song.all.page(params[:page]).per(15)
   end
 
   def new
@@ -22,7 +22,7 @@ class SongsController < ApplicationController
   end
 
   def search
-    @songs = @p.result
+    @songs = @p.result.page(params[:page]).per(15)
   end
 
   def show

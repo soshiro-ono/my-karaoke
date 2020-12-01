@@ -58,3 +58,8 @@
   margin-top: 6%;
   margin-bottom: 50px;
 }
+
+.pagenate{
+  display: flex;
+  justify-content: center;
+}

@@ -67,5 +67,35 @@
   </div>
 </div>
 
+
+<div class="main">
+  <div class="main-content">
+  <h3>気になる投稿</h3>
+    <div class="grid">
+      <% @user.favorited_songs.each do |song| %>
+        <table class="detail-table">
+          <tbody>
+            <tr>
+              <th class="index-detail-song">アーティスト名</th>
+              <th class="index-detail-value">曲名</td>
+            </tr>
+            <tr>
+              <td class="index-detail-song"><%= song.artist %></td> 
+              <td class="index-detail-value">
+                <%= link_to song_path(song.id) do %>
+                  <%= song.title %>
+                <% end %>
+              </td> 
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+  <div class="pagenate">
+    <%= paginate @songs %>
+  </div>
+
 <%= render "shared/footer" %>
 
