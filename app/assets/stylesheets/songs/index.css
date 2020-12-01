@@ -31,6 +31,15 @@
   justify-content: center;
 }
 
+.main-title{
+  margin-top: 20px;
+  padding: 20px 0px;
+  display: flex;
+  font-size: large;
+  justify-content: center;
+  border-bottom: aqua 2px solid;
+}
+
 .detail-table{
   display: flex;
   justify-content: center;

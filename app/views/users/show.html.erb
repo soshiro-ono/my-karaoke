@@ -44,6 +44,9 @@
     <%# 新規投稿 %>
 <div class="main">
   <div class="main-content">
+    <div class="main-title-user">
+      <%= @user.nickname%>さんの投稿一覧です
+    </div>
     <div class="grid">
       <% @songs.each do |song| %>
         <table class="detail-table">
@@ -70,7 +73,9 @@
 
 <div class="main">
   <div class="main-content">
-  <h3>気になる投稿</h3>
+    <div class="main-title-user">
+      <%= @user.nickname%>さんのお気に入りです
+    </div>
     <div class="grid">
       <% @user.favorited_songs.each do |song| %>
         <table class="detail-table">

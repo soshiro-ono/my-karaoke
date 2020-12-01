@@ -16,16 +16,14 @@
 
       <%= f.label :gerne_id_eq, 'ジャンル：'  %>
       <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+
+      <%= f.label :populur_id_eq, '知名度：'  %>
+      <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
     </div>
     <% end  %>
+</div>
 
-    <%# カメラ新規投稿 %>
-  <div class="icon">
-    <div class='purchase-btn1'>
-      検索結果
-    </div>
-  </div>
-    <%# カメラ新規投稿 %>
+<div class="main">    
   <div class="main-content">
     <div class="grid">
       <% @songs.each do |song| %>
