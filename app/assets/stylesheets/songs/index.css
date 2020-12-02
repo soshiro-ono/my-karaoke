@@ -72,3 +72,18 @@
   display: flex;
   justify-content: center;
 }
+
+/* スマホ */
+@media (max-width: 600px){
+  .search-pulldown-index{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* スマホ */
