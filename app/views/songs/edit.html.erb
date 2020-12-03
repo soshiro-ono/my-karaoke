@@ -2,7 +2,7 @@
 
   <div class="song-main">
     <%= form_with(model: @song, local: true, class: "song-form") do |f| %>
-
+    <%= render 'shared/error_messages', model: f.object %>
       <div class="songs-text">
         <div class="song-title">
           <h2>曲名入力欄</h2>

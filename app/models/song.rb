@@ -13,4 +13,13 @@ class Song < ApplicationRecord
   belongs_to_active_hash :populur
 
   # アクティブハッシュのアソシエーション
+
+  with_options presence: true do
+    validates :title
+    validates :artist
+    validates :interval_id
+    validates :gender_id
+    validates :genre_id
+    validates :populur_id
+  end
 end
