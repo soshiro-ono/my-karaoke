@@ -60,6 +60,13 @@
   width: 150px;
 }
 
+.index-detail-user{
+  padding: 10px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  width: 50px;
+}
+
 .grid{
   display: grid;
   gap:16px;
