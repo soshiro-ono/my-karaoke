@@ -53,6 +53,7 @@
 }
 
 .index-detail-song {
+  /* font-size: 1%; */
   padding: 0px 10px;
   border: 1px solid #dedede;
   font-size: 14px;
@@ -92,5 +93,9 @@
     flex-direction: column;
     align-items: center;
   }
+  .search-pulldown-index-child{
+    width:150px;
+  }
 }
 /* スマホ */
+
