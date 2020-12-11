@@ -1,24 +1,49 @@
-# README
+## アプリケーション名
+my-karaoke
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション概要
+カラオケで歌いたい曲の検索アプリケーションです。曲名をクリックすることで曲の詳細をみることができます。
 
-Things you may want to cover:
+## 機能一覧
+曲検索機能(ransack)
 
-* Ruby version
+曲一覧表示機能
 
-* System dependencies
+曲詳細情報表示機能
 
-* Configuration
+ユーザーフォロー機能
 
-* Database creation
+お気に入り機能
 
-* Database initialization
+ユーザー登録、ログイン機能(devise)
 
-* How to run the test suite
+ページネーション機能(kaminari)
 
-* Services (job queues, cache servers, search engines, etc.)
+### ユーザー限定機能
+曲登録機能
 
-* Deployment instructions
+曲削除機能
 
-* ...
+曲編集機能
+
+## 使用技術
+### フロントエンド
+
+JavaScript
+
+### バックエンド
+
+Ruby 2.6.5
+Rails 6.0.0
+
+### 本番環境
+heroku
+MySQL2
+
+### その他
+RSpec
+
+## URL
+https://my-karaoke-29798.herokuapp.com/
+
+## ER図
