@@ -1,26 +1,29 @@
 <%= render "shared/header" %>
 
 <div class="contents row">
-  <%= search_form_for @p, url: search_songs_path do |f| %>
-    <div class = "search-keyword-index">
-      <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
-      <%= f.submit '検索' %>
-    </div>
+  <% if user_signed_in? %>
+    <%= search_form_for @p, url: search_users_path do |f| %>
+      <div class = "search-keyword-index">
+        <%# <%= f.number_field :user_id,value:@user.id %>
+        <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
+        <%= f.submit '検索' %>
+      </div>
 
-    <div class = "search-pulldown-index">
-      <%= f.label :interval_eq, 'キー：'  %>
-      <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+      <div class = "search-pulldown-index">
+        <%= f.label :interval_eq, 'キー：'  %>
+        <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
 
-      <%= f.label :gender_id_eq, '性別：'  %>
-      <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <%= f.label :gender_id_eq, '性別：'  %>
+        <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
 
-      <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-      <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <%= f.label :gerne_id_eq, 'ジャンル：'  %>
+        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
 
-      <%= f.label :populur_id_eq, '知名度：'  %>
-      <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
-    </div>
+        <%= f.label :populur_id_eq, '知名度：'  %>
+        <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+      </div>
     <% end  %>
+  <% end  %>
 
     <%# 新規投稿 %>
 
@@ -41,8 +44,9 @@
   <% end %>
 <% end %>
 
-<%= render ‘relationships/follow_button’, user: @user %> 
-
+<% if user_signed_in? %>
+  <%= render partial: 'relationships/follow_button',locals: { user: @user}  %>
+<% end %>
 
     <%# 新規投稿 %>
 <div class="main">

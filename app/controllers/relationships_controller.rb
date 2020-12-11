@@ -1,7 +1,6 @@
 class RelationshipsController < ApplicationController
   def create
     user = User.find(params[:follow_id])
-    binding.pry
     following = current_user.follow(user)
     if following.save
       flash[:success] = 'ユーザーをフォローしました'
