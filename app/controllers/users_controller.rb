@@ -1,14 +1,19 @@
 class UsersController < ApplicationController
-  before_action :search_song, only: [:show,:search]
+  # if user_signed_in?
+    # before_action :search_song, only: [:show,:search]
+  # end
 
 
   def show
     @user = User.find(params[:id])
+    search_song
     @songs = @user.songs.page(params[:page]).per(15)
     # モデルのアソシエーションがhas manyだから
   end
 
   def search
+    # @user = User.find(params[:id])
+    search_song
     @songs = @p.result.page(params[:page]).per(15)
   end
 
@@ -16,6 +21,7 @@ class UsersController < ApplicationController
   
   private
   def search_song
+    return unless user_signed_in?
     @p = Song.where(user_id: current_user.id).ransack(params[:q])  # 検索オブジェクトを生成
   end
 end

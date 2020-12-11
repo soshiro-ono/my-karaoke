@@ -1,0 +1,11 @@
+.follow_btn{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.btn-block{
+  margin-top: 20px;
+  padding: 4px 50px;
+  font-size: large;
+}
