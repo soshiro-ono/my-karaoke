@@ -1,6 +1,10 @@
 <%= render "shared/header" %>
 
 <div class="contents row">
+  <h2 class="page-title">Singing is everything</h2>
+  <p class="page-p">新たな曲との出会い提供するMY KARAOKE。ここは<%= @user.nickname%>さんのマイページです。
+     歌いたい曲を保存しておきましょう。
+  </p>
   <% if user_signed_in? %>
     <%= search_form_for @p, url: search_users_path do |f| %>
       <div class = "search-keyword-index">

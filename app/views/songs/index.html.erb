@@ -1,6 +1,10 @@
 <%= render "shared/header" %>
 
 <div class="contents row">
+  <h2 class="page-title">Singing is everything</h2>
+  <p class="page-p">新たな曲との出会い提供するMY KARAOKE。みんなが歌いたい曲の情報が満載です。
+     みんなの曲を見てレパートリーを増やしましょう。
+  </p>
   <%= search_form_for @p, url: search_songs_path do |f| %>
     <div class = "search-keyword-index">
       <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>

@@ -5,6 +5,21 @@
   margin-top: 50px;
 }
 
+.contents{
+  text-align: center;
+}
+
+.page-title{
+  font-size: 35px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+
+.page-p{
+  margin: 0px 20px;
+}
+
 .search-pulldown-index{
   display: flex;
   justify-content: center;
