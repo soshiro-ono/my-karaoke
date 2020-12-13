@@ -44,6 +44,11 @@
           みんなの投稿一覧へ
         <% end %>
       </div>
+      <div class="song-btn-user">
+        <%= link_to followings_user_path(@user.id) do %>
+          フォロー一覧へ
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
@@ -80,7 +85,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="main">
   <div class="main-content">

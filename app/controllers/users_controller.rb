@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     # before_action :search_song, only: [:show,:search]
   # end
 
+  def followings
+    @user = User.find(params[:id])
+    @users = @user.followings.all
+  end
 
   def show
     @user = User.find(params[:id])

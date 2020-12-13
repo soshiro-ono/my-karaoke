@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'songs#index'
   resources :relationships, only: [:create, :destroy]
   resources :users, only: [:show] do
+    get :followings, on: :member
     collection do
       get 'search'
     end

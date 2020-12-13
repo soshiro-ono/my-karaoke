@@ -1,0 +1,7 @@
+<%= render "shared/header" %>
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+      <%= user.nickname %>
+    <% end %>
+  <% end %>
+<%= render "shared/footer" %>
