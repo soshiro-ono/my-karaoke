@@ -1,8 +1,10 @@
 <%= render "shared/header" %>
 
 <div class="contents row">
-  <h2 class="page-title">Singing is everything</h2>
-  <p class="page-p">新たな曲との出会い提供するMY KARAOKE。ここは<%= @user.nickname%>さんのマイページです。
+  <h2 class="page-title">Singing is everything!</h2>
+  <p class="page-p">新たな曲との出会い提供するMY KARAOKE。
+  </p>
+  <p class="page-p">ここは<%= @user.nickname%>さんのマイページです。
      歌いたい曲を保存しておきましょう。
   </p>
   <% if user_signed_in? %>
@@ -68,12 +70,12 @@
         <table class="detail-table">
           <tbody>
             <tr>
-              <th class="index-detail-song">アーティスト名</th>
-              <th class="index-detail-value">曲名</td>
+              <th class="user-show-detail-song">アーティスト名</th>
+              <th class="user-show-detail-value">曲名</td>
             </tr>
             <tr>
-              <td class="index-detail-song"><%= song.artist %></td> 
-              <td class="index-detail-value">
+              <td class="user-show-detail-song"><%= song.artist %></td> 
+              <td class="user-show-detail-value">
                 <%= link_to song_path(song.id) do %>
                   <%= song.title %>
                 <% end %>
@@ -96,18 +98,18 @@
         <table class="detail-table">
           <tbody>
             <tr>
-              <th class="index-detail-user">投稿者</th>
-              <th class="index-detail-song">アーティスト名</th>
-              <th class="index-detail-value">曲名</td>
+              <th class="user-show-detail-user">投稿者</th>
+              <th class="user-show-detail-song">アーティスト名</th>
+              <th class="user-show-detail-value">曲名</td>
             </tr>
             <tr>
-              <td class="index-detail-user">
+              <td class="user-show-detail-user">
                 <%= link_to user_path(song.user_id) do %>
                   <%= song.user.nickname %>
                 <% end %>
               </td>
-              <td class="index-detail-song"><%= song.artist %></td> 
-              <td class="index-detail-value">
+              <td class="user-show-detail-song"><%= song.artist %></td> 
+              <td class="user-show-detail-value">
                 <%= link_to song_path(song.id) do %>
                   <%= song.title %>
                 <% end %>

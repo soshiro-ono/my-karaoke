@@ -1,5 +1,6 @@
 ## アプリケーション名
-<img width="1437" alt="readme" src="https://user-images.githubusercontent.com/68278795/102305608-d7f04900-3fa3-11eb-8865-0f20f43e927a.png">
+<img width="1440" alt="6390d6bfd79070e7e3203c6fc4b75333" src="https://user-images.githubusercontent.com/68278795/102321719-6aebac00-3fc1-11eb-9ee4-890077bd3821.png">
+
 
 my-karaoke
 

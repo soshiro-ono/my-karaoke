@@ -65,6 +65,8 @@
   border: 1px solid #dedede;
   font-size: 14px;
   width: 200px;
+  text-align: center;
+  background-color: lightcyan;
 }
 
 .index-detail-song {
@@ -74,13 +76,16 @@
   font-size: 14px;
   text-align: center;
   width: 150px;
+  background-color: lightcyan;
 }
 
 .index-detail-user{
   padding: 10px;
   border: 1px solid #dedede;
   font-size: 14px;
-  width: 50px;
+  width: 80px;
+  text-align: center;
+  background-color: lightcyan;
 }
 
 .grid{

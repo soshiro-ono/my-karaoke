@@ -1,7 +1,23 @@
 <%= render "shared/header" %>
-  <% @users.each do |user| %>
-    <%= link_to user_path(user.id) do %>
-      <%= user.nickname %>
+<div class="contents row">
+  <h2 class="page-title">Followings user!</h2>
+  <p class="page-p">ここは<%= @user.nickname%>さんがフォローしたユーザー一覧です。</p>
+  <%# <p class="page-p">趣味の会うユーザー</p> %>
+  <div class="grid">
+    <% @users.each do |user| %>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="user-show-detail-song">投稿者</th>
+            <th class="user-show-detail-value">
+              <%= link_to user_path(user.id) do %>
+                <%= user.nickname %>
+              <% end %>
+            </th>
+          </tr>
+        </tbody>
+      </table>
     <% end %>
-  <% end %>
+  </div>
+</div>
 <%= render "shared/footer" %>

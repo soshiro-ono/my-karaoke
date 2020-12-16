@@ -1,9 +1,11 @@
 
 .song-btn-user{
   margin-top: 30px;
-  background-color:#d7cebb;
+  background-color: honeydew;
   padding: 16px 40px;
   border-radius: 20px;
+  border: 1px solid #dedede;
+
 }
 
 .main-title-user{
@@ -15,3 +17,30 @@
   border-bottom: #d7cebb 2px solid;
 }
 
+.user-show-detail-value {
+  padding: 10px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  width: 200px;
+  text-align: center;
+  background-color: honeydew;
+}
+
+.user-show-detail-song {
+  /* font-size: 1%; */
+  padding: 0px 10px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  width: 150px;
+  background-color: honeydew;
+}
+
+.user-show-detail-user{
+  padding: 10px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  width: 80px;
+  text-align: center;
+  background-color: honeydew;
+}
