@@ -50,6 +50,7 @@ class SongsController < ApplicationController
   end
 
 
+
   private
   def song_params
     params.require(:song).permit(:title, :artist, :memo, :genre_id, :interval_id, :gender_id, :populur_id).merge(user_id: current_user.id)

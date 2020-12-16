@@ -40,6 +40,14 @@ class User < ApplicationRecord
   
   # フォロー機能
 
+  def self.guest
+    find_or_create_by!(email: 'guest@com') do |user|
+      user.password = "guest111"
+      user.nickname = "ゲスト"
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
