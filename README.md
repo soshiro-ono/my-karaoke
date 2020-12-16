@@ -62,3 +62,4 @@ RSpec
 https://my-karaoke-29798.herokuapp.com/
 
 ## ER図
+<img width="976" alt="dfc9d67fb3e9c8dccf04f28cbeee72ce" src="https://user-images.githubusercontent.com/68278795/102323602-0aaa3980-3fc4-11eb-8d01-b55c231f0b2d.png">
