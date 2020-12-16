@@ -1,4 +1,7 @@
 ## アプリケーション名
+<img width="1440" alt="6390d6bfd79070e7e3203c6fc4b75333" src="https://user-images.githubusercontent.com/68278795/102321719-6aebac00-3fc1-11eb-9ee4-890077bd3821.png">
+
+
 my-karaoke
 
 ## アプリケーション概要

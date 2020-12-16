@@ -1,6 +1,12 @@
 <%= render "shared/header" %>
 
 <div class="contents row">
+  <h2 class="page-title">Find your favorite!</h2>
+  <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
+  </p>
+  <p class="page-p">このページではみんなが歌いたい曲の情報が満載です。
+     みんなの曲を見てレパートリーを増やしましょう。
+  </p>
   <%= search_form_for @p, url: search_songs_path do |f| %>
     <div class = "search-keyword-index">
       <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
