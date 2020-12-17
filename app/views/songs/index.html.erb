@@ -34,25 +34,25 @@
         <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
       </div>
     </div>
-    <% end  %>
+  <% end  %>
 
     <%# 新規投稿 %>
 
   <% if user_signed_in? %>
-  <div class="icon">
-    <div class='song-btn1'>
-      <a href="/songs/new">
-        曲を登録する
-      </a>
-    </div>
+    <div class="icon">
+      <div class='song-btn1'>
+        <a href="/songs/new">
+          曲を登録する
+        </a>
+      </div>
 
-    <div class="song-btn1">
-      <%= link_to user_path(current_user.id) do %>
-        マイページへ
-      <% end %>
+      <div class="song-btn1">
+        <%= link_to user_path(current_user.id) do %>
+          マイページへ
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
 
     <%# 新規投稿 %>
