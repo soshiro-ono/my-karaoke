@@ -1,7 +1,8 @@
 ## アプリケーション名
 my-karaoke
 
-![readme-use](https://user-images.githubusercontent.com/68278795/102620208-05deb480-4181-11eb-846c-0640ccb0fd32.jpg)
+![readme-1](https://user-images.githubusercontent.com/68278795/102627710-eef18f80-418b-11eb-8fab-5a6824cfe4a3.jpg)
+
 
 
 ゲストログイン機能がついております。閲覧にはゲストログインをクリックしてください。
