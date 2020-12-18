@@ -1,5 +1,10 @@
-#home5{
+/* #home5{
   background-image: url('/assets/images/live-rainbow.jpg');
+  background-size: cover;
+} */
+
+#home5{
+  background-image: image-url('live-rainbow.jpg');
   background-size: cover;
 }
 
