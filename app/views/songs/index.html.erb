@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div class="contents row">
+<div id="home" class="contents row">
   <h2 class="page-title">Find your favorite!</h2>
   <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
   </p>
@@ -10,7 +10,7 @@
   <%= search_form_for @p, url: search_songs_path do |f| %>
     <div class = "search-keyword-index">
       <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
-      <%= f.submit '検索' %>
+      <%= f.submit '検索',{class:"search-submit-index"} %>
     </div>
 
     <div class = "search-pulldown-index">
@@ -53,7 +53,7 @@
       </div>
     </div>
   <% end %>
-</div>
+</div><!--/#home -->
 
     <%# 新規投稿 %>
 <div class="main">
