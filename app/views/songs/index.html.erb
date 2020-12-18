@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div class="contents row">
+<div id="home" class="contents row">
   <h2 class="page-title">Find your favorite!</h2>
   <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
   </p>
@@ -8,30 +8,34 @@
      みんなの曲を見てレパートリーを増やしましょう。
   </p>
   <%= search_form_for @p, url: search_songs_path do |f| %>
-    <div class = "search-keyword-index">
-      <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
-      <%= f.submit '検索' %>
+    <div class = "search-keyword">
+      <div class = "search-keyword-child">
+        <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
+      </div>
+      <div class = "search-keyword-child">
+        <%= f.submit '検索',{class:"search-submit"} %>
+      </div>
     </div>
 
-    <div class = "search-pulldown-index">
-      <div class = "search-pulldown-index-child">
+    <div class = "search-pulldown">
+      <div class = "search-pulldown-child">
         <%= f.label :interval_eq, 'キー：'  %>
-        <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
       </div>
 
-      <div class = "search-pulldown-index-child">
+      <div class = "search-pulldown-child">
         <%= f.label :gender_id_eq, '性別：'  %>
-        <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
       </div>
 
-      <div class = "search-pulldown-index-child">
+      <div class = "search-pulldown-child">
         <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
       </div>
 
-      <div class = "search-pulldown-index-child">
+      <div class = "search-pulldown-child">
         <%= f.label :populur_id_eq, '知名度：'  %>
-        <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
       </div>
     </div>
   <% end  %>
@@ -53,7 +57,7 @@
       </div>
     </div>
   <% end %>
-</div>
+</div><!--/#home -->
 
     <%# 新規投稿 %>
 <div class="main">

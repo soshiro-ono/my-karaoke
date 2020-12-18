@@ -1,26 +1,44 @@
 <%= render "shared/header" %>
 
 
-<div class="contents row">
+<div id="home4" class="contents row">
+  <h2 class="page-title">You want to sing?</h2>
+  <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
+  </p>
+  <%# <p class="page-p">このページではみんなの曲を検索できます。
+     みんなの曲を見てレパートリーを増やしましょう。
+  </p> %>
   <% if user_signed_in? %>
     <%= search_form_for @p, url: search_users_path do |f| %>
-      <div class = "search-keyword-index">
-        <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
-        <%= f.submit '検索' %>
+      <div class = "search-keyword">
+        <div class = "search-keyword-child">
+          <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
+        </div>
+        <div class = "search-keyword-child">
+          <%= f.submit '検索',{class:"search-submit"} %>
+        </div>
       </div>
 
-      <div class = "search-pulldown-index">
-        <%= f.label :interval_eq, 'キー：'  %>
-        <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+      <div class = "search-pulldown">
+        <div class = "search-pulldown-child">
+          <%= f.label :interval_eq, 'キー：'  %>
+          <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+        </div>
 
-        <%= f.label :gender_id_eq, '性別：'  %>
-        <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <div class = "search-pulldown-child">
+          <%= f.label :gender_id_eq, '性別：'  %>
+          <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+        </div>
 
-        <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <div class = "search-pulldown-child">
+          <%= f.label :gerne_id_eq, 'ジャンル：'  %>
+          <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+        </div>
 
-        <%= f.label :populur_id_eq, '知名度：'  %>
-        <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select-index"} %>
+        <div class = "search-pulldown-child">
+          <%= f.label :populur_id_eq, '知名度：'  %>
+          <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+        </div>
       </div>
       <% end  %>
     <% end  %>

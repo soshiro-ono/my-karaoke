@@ -10,6 +10,7 @@ a {
 .title{
   margin-top: 35px;
   font-size: 25px;
+  font-weight: 800;
 }
 /* ロゴを作りたい */
 
@@ -23,6 +24,8 @@ a {
 
 .main-nav li{
   margin-left: 35px;
+  font-weight: 800;
+  font-size: 25px;
 }
 
 /* ユーザー管理 */
@@ -50,6 +53,7 @@ a {
 
 .main-nav a:hover{
   color: #0bd;
+
 }
 
 /* 横幅、中央に配置 */
