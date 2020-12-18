@@ -39,8 +39,18 @@
           <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
         </div>
       </div>
-      <% end  %>
     <% end  %>
+  <% end  %>
+
+  <% if user_signed_in? %>
+    <div class="icon">
+      <div class="song-btn1">
+        <%= link_to root_path do %>
+          みんなの投稿一覧へ
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <div class="main">    
