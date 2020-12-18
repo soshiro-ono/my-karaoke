@@ -1,7 +1,13 @@
-#home{
+/* #home{
   background-image: url('/assets/images/microphone-1209816_1920.jpg');
   background-size: cover;
-}
+} */
+
+
+/* #home{
+  background-image: image-url('microphone-1209816_1920.jpg');
+  background-size: cover;
+} */
 
 
 

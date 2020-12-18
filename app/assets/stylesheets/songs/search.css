@@ -1,4 +1,10 @@
+/* // #home3{
+//   background-image: url('/assets/images/microphone-2130806_1920.jpg');
+//   background-size: cover;
+// } */
+
+
 #home3{
-  background-image: url('/assets/images/microphone-2130806_1920.jpg');
+  background-image: image-url('microphone-2130806_1920.jpg');
   background-size: cover;
 }
