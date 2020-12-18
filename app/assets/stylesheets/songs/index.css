@@ -1,14 +1,20 @@
 #home{
   background-image: url('/assets/images/microphone-1209816_1920.jpg');
   background-size: cover;
-
 }
 
-.search-keyword-index{
+
+
+.search-keyword{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 30px;
   margin-top: 50px;
+}
+
+.search-keyword-child{
+  margin-bottom: 12px;
 }
 
 .search-submit{
