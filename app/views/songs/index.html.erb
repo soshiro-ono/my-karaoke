@@ -10,7 +10,7 @@
   <%= search_form_for @p, url: search_songs_path do |f| %>
     <div class = "search-keyword">
       <div class = "search-keyword-child">
-        <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード" %>
+        <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード", class: "keyword-box" %>
       </div>
       <div class = "search-keyword-child">
         <%= f.submit '検索',{class:"search-submit"} %>

@@ -2,24 +2,6 @@
 <div id="home5" class="contents row">
   <h2 class="page-title">Followings user!</h2>
   <p class="page-p">ここは<%= @user.nickname%>さんがフォローしたユーザー一覧です。</p>
-  <%# <p class="page-p">趣味の会うユーザー</p> %>
-  <div class="grid">
-    <% @users.each do |user| %>
-      <table class="detail-table">
-        <tbody>
-          <tr>
-            <th class="user-show-detail-song">投稿者</th>
-            <th class="user-show-detail-value">
-              <%= link_to user_path(user.id) do %>
-                <%= user.nickname %>
-              <% end %>
-            </th>
-          </tr>
-        </tbody>
-      </table>
-    <% end %>
-  </div>
-
   <% if user_signed_in? %>
     <% if @user.id == current_user.id %>
       <div class="icon">
@@ -33,8 +15,31 @@
             みんなの投稿一覧へ
           <% end %>
         </div>
+        <div class="song-btn-user">
+          <%= link_to user_path(current_user.id) do %>
+            マイページへ
+          <% end %>
+        </div>
       </div>
     <% end %>
+  <% end %>  
+</div>
+<div class="grid">
+  <% @users.each do |user| %>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="user-show-detail-song">投稿者</th>
+          <th class="user-show-detail-value">
+            <%= link_to user_path(user.id) do %>
+              <%= user.nickname %>
+            <% end %>
+          </th>
+        </tr>
+      </tbody>
+    </table>
   <% end %>
 </div>
+
 <%= render "shared/footer" %>
+
