@@ -4,7 +4,7 @@
 } */
 
 
-#home{
+#home-index{
   background-image: image-url('microphone-1209816_1920.jpg');
   background-size: cover;
 }
@@ -17,6 +17,13 @@
   justify-content: center;
   margin-bottom: 30px;
   margin-top: 50px;
+}
+
+.keyword-box{
+  border:2px solid aqua;
+  border-radius:20px;
+  padding: 0px 4px;
+  margin-bottom: 4px;
 }
 
 .search-keyword-child{

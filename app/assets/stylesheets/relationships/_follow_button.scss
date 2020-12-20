@@ -4,7 +4,7 @@
 } */
 
 #home5{
-  background-image: image-url('live-rainbow.jpg');
+  background-image: image-url('birds-800671_1280.jpg');
   background-size: cover;
 }
 
@@ -14,9 +14,23 @@
 
 }
 
-.btn-block{
-  margin-top: 20px;
-  padding: 4px 50px;
-  font-size: large;
+.btn-block-follow{
+  margin-top: 30px;
+  border:2px solid aqua;
+  border-radius:20px;
+  width: 150px;
+  background-color: lightcyan;
+  color: gray;
+  padding: 8px;
+}
+
+.btn-block-unfollow{
+  margin-top: 30px;
+  border:2px solid white;
+  border-radius:20px;
+  width: 150px;
+  background-color: red;
+  color: white;
+  padding: 8px;
 }
 
