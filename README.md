@@ -57,14 +57,17 @@ Ruby 2.6.5
 Rails 6.0.0
 
 ### 本番環境
-heroku
+AWS
+EC2
+Capistrano
+Nginx
 MySQL2
 
 ### その他
 RSpec
 
 ## URL
-https://my-karaoke-29798.herokuapp.com/
+13.231.13.154
 
 ## ER図
 <img width="976" alt="dfc9d67fb3e9c8dccf04f28cbeee72ce" src="https://user-images.githubusercontent.com/68278795/102323602-0aaa3980-3fc4-11eb-8d01-b55c231f0b2d.png">
