@@ -58,9 +58,13 @@ Rails 6.0.0
 
 ### 本番環境
 AWS
+
 EC2
+
 Capistrano
+
 Nginx
+
 MySQL2
 
 ### その他
