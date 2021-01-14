@@ -7,11 +7,10 @@
   <p class="page-p">このページではみんなが歌いたい曲の情報が満載です。
      みんなの曲を見てレパートリーを増やしましょう。
   </p>
-  
-  <%= render partial: "tweet", locals: { tweet: tweet } %>
 
-
-    <%# 新規投稿 %>
+    <%= render "shared/search_bar" %>
+    
+  <%# 新規投稿 %>
 
   <% if user_signed_in? %>
     <div class="icon">
