@@ -7,40 +7,10 @@
   <p class="page-p">このページではみんなが歌いたい曲の情報が満載です。
      みんなの曲を見てレパートリーを増やしましょう。
   </p>
-  <%= search_form_for @p, url: search_songs_path do |f| %>
-    <div class = "search-keyword">
-      <div class = "search-keyword-child">
-        <%= f.search_field :artist_or_title_or_memo_cont, placeholder:"キーワード", class: "keyword-box" %>
-      </div>
-      <div class = "search-keyword-child">
-        <%= f.submit '検索',{class:"search-submit"} %>
-      </div>
-    </div>
 
-    <div class = "search-pulldown">
-      <div class = "search-pulldown-child">
-        <%= f.label :interval_eq, 'キー：'  %>
-        <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
-      </div>
-
-      <div class = "search-pulldown-child">
-        <%= f.label :gender_id_eq, '性別：'  %>
-        <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
-      </div>
-
-      <div class = "search-pulldown-child">
-        <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
-      </div>
-
-      <div class = "search-pulldown-child">
-        <%= f.label :populur_id_eq, '知名度：'  %>
-        <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
-      </div>
-    </div>
-  <% end  %>
-
-    <%# 新規投稿 %>
+    <%= render "shared/search_bar" %>
+    
+  <%# 新規投稿 %>
 
   <% if user_signed_in? %>
     <div class="icon">
@@ -65,32 +35,7 @@
   <div class="main-title">
     これはみんなの投稿一覧です
   </div>
-    <div class="grid">
-      <% @songs.each do |song| %>
-        <table class="detail-table">
-          <tbody>
-            <tr>
-              <th class="index-detail-user">投稿者</th>
-              <th class="index-detail-song">アーティスト名</th>
-              <th class="index-detail-value">曲名</th>
-            </tr>
-            <tr>
-              <td class="index-detail-user">
-                <%= link_to user_path(song.user_id) do %>
-                  <%= song.user.nickname %>
-                <% end %>
-              </td>
-              <td class="index-detail-song"><%= song.artist %></td> 
-              <td class="index-detail-value">
-                <%= link_to song_path(song.id) do %>
-                  <%= song.title %>
-                <% end %>
-              </td> 
-            </tr>
-          </tbody>
-        </table>
-      <% end %>
-    </div>
+    <%= render "shared/songs" %>
   </div>
 </div>
   <div class="pagenate">
