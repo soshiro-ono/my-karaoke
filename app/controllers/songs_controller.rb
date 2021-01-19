@@ -6,6 +6,13 @@ class SongsController < ApplicationController
 
   def index
     @songs = Song.all.page(params[:page]).per(15)
+
+    agent = Mechanize.new
+  
+    page = agent.get("https://www.karatetsu.com/ranking/")
+  
+    @elements= page.search('.visit-w')
+  
   end
 
   def new

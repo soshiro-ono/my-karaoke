@@ -41,4 +41,12 @@
   <div class="pagenate">
     <%= paginate @songs %>
   </div>
+
+<% @elements.each do|element| %>
+  <ul>
+    <li>
+      <%=link_to(element.inner_text,element[:href])%>
+    </li>
+  </ul>
+<%end%>
 <%= render "shared/footer" %>
