@@ -71,3 +71,4 @@ gem 'active_hash'
 
 gem 'ransack'
 gem 'kaminari'
+gem 'mechanize'

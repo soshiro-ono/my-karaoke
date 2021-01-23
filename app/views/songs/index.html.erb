@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div id="home-index" class="contents row">
+<div id="home-index" class="contents">
   <h2 class="page-title">Find your favorite!</h2>
   <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
   </p>
@@ -8,23 +8,23 @@
      みんなの曲を見てレパートリーを増やしましょう。
   </p>
 
-    <%= render "shared/search_bar" %>
+  <%= render "shared/search_bar" %>
     
   <%# 新規投稿 %>
 
   <% if user_signed_in? %>
     <div class="icon">
-      <div class='song-btn1'>
-        <a href="/songs/new">
-          曲を登録する
-        </a>
-      </div>
+      <a href="/songs/new">
+          <button type="button" class="btn btn-light">
+        曲を登録する
+        </button>
+      </a>
 
-      <div class="song-btn1">
-        <%= link_to user_path(current_user.id) do %>
-          マイページへ
-        <% end %>
-      </div>
+      <%= link_to user_path(current_user.id) do %>
+          <button type="button" class="btn btn-light">
+        マイページへ
+        </button>
+      <% end %>
     </div>
   <% end %>
 </div><!--/#home -->
@@ -41,4 +41,12 @@
   <div class="pagenate">
     <%= paginate @songs %>
   </div>
+
+<%# <% @elements.each do|element| %>
+  <%# <ul>
+    <li>
+      <%=link_to(element.inner_text,element[:href]) %>
+    <%# </li>
+  </ul> %> 
+<%# <%end %>
 <%= render "shared/footer" %>
