@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 
-<div id="home-user-search" class="contents row">
+<div id="home-user-search" class="contents">
   <h2 class="page-title">You want to sing?</h2>
   <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
   </p>
@@ -46,24 +46,33 @@
   <% if user_signed_in? %>
     <% if @user.id == current_user.id %>
       <div class="icon">
-        <div class='song-btn1'>
-          <a href="/songs/new">
-            曲を登録する
-          </a>
-        </div>
-        <div class="song-btn1">
-          <%= link_to root_path do %>
+        <a href="/songs/new">
+          <button type="button" class="btn btn-primary">
+          曲を登録する
+          </button>
+        </a>
+
+        <%= link_to user_path(current_user.id) do %>
+          <button type="button" class="btn btn-primary">
+          マイページへ
+          </button>
+        <% end %>
+
+        <%= link_to user_path(current_user.id) do %>
+          <button type="button" class="btn btn-primary">
             みんなの投稿一覧へ
-          <% end %>
-        </div>
-        <div class="song-btn1">
-          <%= link_to followings_user_path(@user.id) do %>
+          </button>
+        <% end %>
+
+        <%= link_to followings_user_path(@user.id) do %>
+          <button type="button" class="btn btn-primary">
             フォロー一覧へ
-          <% end %>
-        </div>
+          </button>
+        <% end %>
       </div>
     <% end %>
   <% end %>
+
   <% if user_signed_in? %>
     <% unless @user.id == current_user.id %>
       <div class="icon">
@@ -88,24 +97,31 @@
     これは<%= @user.nickname%>さんの検索結果です
     </div>
     <div class="grid">
-      <% @songs.each do |song| %>
-        <table class="detail-table">
-          <tbody>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">投稿者</th>
+            <th scope="col">アーティスト名</th>
+            <th scope="col">曲名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @songs.each do |song| %>
             <tr>
-              <th class="index-detail-song">アーティスト名</th>
-              <th class="index-detail-value">曲名</td>
-            </tr>
-            <tr>
-              <td class="index-detail-song"><%= song.artist %></td> 
-              <td class="index-detail-value">
-                <%= link_to song_path(song.id) do %>
+              <td>
+                <%= link_to user_path(song.user_id) do %>
+                  <%= song.user.nickname %>
+                <% end %>
+              </td>
+              <td><%= song.artist %></td>
+              <td><%= link_to song_path(song.id) do %>
                   <%= song.title %>
                 <% end %>
-              </td> 
+              </td>
             </tr>
-          </tbody>
-        </table>
-      <% end %>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

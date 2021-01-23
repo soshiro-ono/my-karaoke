@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div id="home-song-search" class="contents row">
+<div id="home-song-search" class="contents">
   <h2 class="page-title">Did you find favorite?</h2>
   <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
   </p>
@@ -13,23 +13,23 @@
 
   <% if user_signed_in? %>
     <div class="icon">
-      <div class="song-btn1">
-        <%= link_to root_path do %>
-          みんなの投稿一覧へ
-        <% end %>
-      </div>
-      
-      <div class='song-btn1'>
-        <a href="/songs/new">
-          曲を登録する
-        </a>
-      </div>
+      <a href="/songs/new">
+        <button type="button" class="btn btn-primary">
+        曲を登録する
+        </button>
+      </a>
 
-      <div class="song-btn1">
-        <%= link_to user_path(current_user.id) do %>
-          マイページへ
-        <% end %>
-      </div>
+      <%= link_to user_path(current_user.id) do %>
+        <button type="button" class="btn btn-primary">
+        マイページへ
+        </button>
+      <% end %>
+
+      <%= link_to user_path(current_user.id) do %>
+        <button type="button" class="btn btn-primary">
+          みんなの投稿一覧へ
+        </button>
+      <% end %>
     </div>
   <% end %>
 </div>

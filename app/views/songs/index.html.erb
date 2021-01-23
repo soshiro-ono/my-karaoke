@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div id="home-index" class="contents row">
+<div id="home-index" class="contents">
   <h2 class="page-title">Find your favorite!</h2>
   <p class="page-p">歌いたかったあの曲との出会い提供するMY KARAOKE。
   </p>
@@ -20,11 +20,11 @@
         </button>
       </a>
 
-      <div class="song-btn1">
-        <%= link_to user_path(current_user.id) do %>
-          マイページへ
-        <% end %>
-      </div>
+      <%= link_to user_path(current_user.id) do %>
+        <button type="button" class="btn btn-primary">
+        マイページへ
+        </button>
+      <% end %>
     </div>
   <% end %>
 </div><!--/#home -->

@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 
-<div id="home-user-show" class="contents row">
+<div id="home-user-show" class="contents">
   <h2 class="page-title">Singing is everything!</h2>
   <p class="page-p">新たな曲との出会い提供するMY KARAOKE。
   </p>
@@ -47,21 +47,23 @@
   <% if user_signed_in? %>
     <% if @user.id == current_user.id %>
       <div class="icon">
-        <div class='song-btn1'>
-          <a href="/songs/new">
-            曲を登録する
-          </a>
-        </div>
-        <div class="song-btn1">
-          <%= link_to root_path do %>
+        <a href="/songs/new">
+          <button type="button" class="btn btn-primary">
+          曲を登録する
+          </button>
+        </a>
+
+        <%= link_to root_path do %>
+          <button type="button" class="btn btn-primary">
             みんなの投稿一覧へ
-          <% end %>
-        </div>
-        <div class="song-btn1">
-          <%= link_to followings_user_path(@user.id) do %>
+          </button>
+        <% end %>
+
+        <%= link_to followings_user_path(@user.id) do %>
+          <button type="button" class="btn btn-primary">
             フォロー一覧へ
-          <% end %>
-        </div>
+          </button>
+        <% end %>
       </div>
     <% end %>
   <% end %>
@@ -69,20 +71,21 @@
   <% if user_signed_in? %>
     <% unless @user.id == current_user.id %>
       <div class="icon">
-        <div class="song-btn1">
-          <%= link_to root_path do %>
+        <%= link_to user_path(current_user.id) do %>
+          <button type="button" class="btn btn-primary">
             みんなの投稿一覧へ
-          <% end %>
-        </div>
-        <div class="song-btn1">
-          <%= link_to user_path(current_user.id) do %>
-            マイページへ
-          <% end %>
-        </div>
+          </button>
+        <% end %>
+
+        <%= link_to user_path(current_user.id) do %>
+          <button type="button" class="btn btn-primary">
+          マイページへ
+          </button>
+        <% end %>
       </div>
     <% end %>
   <% end %>
-</div>
+</div><!--/#home -->
 
   <% if user_signed_in? %>
     <%= render partial: 'relationships/follow_button',locals: { user: @user}  %>
@@ -95,36 +98,34 @@
       <%= @user.nickname%>さんの投稿一覧です
     </div>
     <div class="grid">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">投稿者</th>
-        <th scope="col">アーティスト名</th>
-        <th scope="col">曲名</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @songs.each do |song| %>
-        <tr>
-          <td>
-            <%= link_to user_path(song.user_id) do %>
-              <%= song.user.nickname %>
-            <% end %>
-          </td>
-          <td><%= song.artist %></td>
-          <td><%= link_to song_path(song.id) do %>
-              <%= song.title %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">投稿者</th>
+            <th scope="col">アーティスト名</th>
+            <th scope="col">曲名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @songs.each do |song| %>
+            <tr>
+              <td>
+                <%= link_to user_path(song.user_id) do %>
+                  <%= song.user.nickname %>
+                <% end %>
+              </td>
+              <td><%= song.artist %></td>
+              <td><%= link_to song_path(song.id) do %>
+                  <%= song.title %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div><!--/#home -->
+</div>
 
 <div class="main">
   <div class="main-content">
@@ -132,30 +133,32 @@
       <%= @user.nickname%>さんのお気に入りです
     </div>
     <div class="grid">
-      <% @user.favorited_songs.each do |song| %>
-        <table class="detail-table">
-          <tbody>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">投稿者</th>
+            <th scope="col">アーティスト名</th>
+            <th scope="col">曲名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user.favorited_songs.each do |song| %>
             <tr>
-              <th class="user-show-detail-user">投稿者</th>
-              <th class="user-show-detail-song">アーティスト名</th>
-              <th class="user-show-detail-value">曲名</td>
-            </tr>
-            <tr>
-              <td class="user-show-detail-user">
+              <td>
                 <%= link_to user_path(song.user_id) do %>
                   <%= song.user.nickname %>
                 <% end %>
               </td>
-              <td class="user-show-detail-song"><%= song.artist %></td> 
-              <td class="user-show-detail-value">
+              <td><%= song.artist %></td>
+              <td>
                 <%= link_to song_path(song.id) do %>
                   <%= song.title %>
                 <% end %>
-              </td> 
+              </td>
             </tr>
-          </tbody>
-        </table>
-      <% end %>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
