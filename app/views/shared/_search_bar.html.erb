@@ -10,11 +10,6 @@
 
   <div class = "search-pulldown">
     <div class = "search-pulldown-child">
-      <%= f.label :interval_eq, 'キー：'  %>
-      <%= f.collection_select :interval_id_eq, Interval.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
-    </div>
-
-    <div class = "search-pulldown-child">
       <%= f.label :gender_id_eq, '性別：'  %>
       <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
     </div>

@@ -19,6 +19,11 @@
               <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
             </div>
 
+            <%# <div class = "pulldown-child">
+              <h2>ジャンル</h2>
+              <%= f.collection_select(:artist_id, @artist.limit(2), :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>
+            <%# </div> %>
+
             <div class = "pulldown-child">
               <h2>キーの高さ</h2>
               <%= f.collection_select(:interval_id, Interval.all, :id, :name, {include_blank: '指定なし'}, {class:"select-box", id:"song-category"}) %>

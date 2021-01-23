@@ -9,14 +9,25 @@ class SongsController < ApplicationController
 
     agent = Mechanize.new
   
-    page = agent.get("https://www.karatetsu.com/ranking/")
+    page = agent.get("https://recochoku.jp/special/100692/")
+
+    @elements= page.search('c-product-list__title c-el')
+
+    @img_elements = page.search('.c-product-list__thum-image')
+
+    # @songs = Song.all.page(params[:page]).per(15)
+
+    # agent = Mechanize.new
   
-    @elements= page.search('.visit-w')
+    # page = agent.get("https://www.karatetsu.com/ranking/")
+
+    # @elements= page.search('.pclink')
   
   end
 
   def new
     @song = Song.new
+    # @artist = スクレイピングの歌手
   end
 
   def create
