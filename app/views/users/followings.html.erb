@@ -6,19 +6,19 @@
     <% if @user.id == current_user.id %>
       <div class="icon">
         <a href="/songs/new">
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-light">
           曲を登録する
           </button>
         </a>
 
         <%= link_to root_path do %>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-light">
             みんなの投稿一覧へ
           </button>
         <% end %>
 
         <%= link_to user_path(current_user.id) do %>
-          <button type="button" class="btn btn-primary">
+          <button type="button" class="btn btn-light">
           マイページへ
           </button>
         <% end %>

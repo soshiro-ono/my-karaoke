@@ -5,17 +5,8 @@ class SongsController < ApplicationController
 
 
   def index
+
     @songs = Song.all.page(params[:page]).per(15)
-
-    agent = Mechanize.new
-  
-    page = agent.get("https://recochoku.jp/special/100692/")
-
-    @elements= page.search('c-product-list__title c-el')
-
-    @img_elements = page.search('.c-product-list__thum-image')
-
-    # @songs = Song.all.page(params[:page]).per(15)
 
     # agent = Mechanize.new
   
