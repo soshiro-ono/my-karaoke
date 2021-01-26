@@ -12,20 +12,20 @@
     <div class="row">
       <div class="col-sm">
         <div class ="pulldown-select">
-          <%= f.label :gender_id_eq, '性別：'  %>
-          <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+          <%= f.label :gender_id_eq, '性別：' ,{class:"color-yellow"} %>
+          <%= f.collection_select :gender_id_eq, Gender.all, :id, :name, {include_blank: '指定なし'},{class:"form-control"} %>
         </div>
       </div>
       <div class="col-sm">
         <div class ="pulldown-select">
-          <%= f.label :gerne_id_eq, 'ジャンル：'  %>
-          <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+          <%= f.label :gerne_id_eq, 'ジャンル：' ,{class:"color-yellow"} %>
+          <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, {include_blank: '指定なし'},{class:"form-control"} %>
         </div>
       </div>
       <div class="col-sm">
         <div class ="pulldown-select">
-          <%= f.label :populur_id_eq, '知名度：'  %>
-          <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"category-select"} %>
+          <%= f.label :populur_id_eq, '知名度：',{class:"color-yellow"}  %>
+          <%= f.collection_select :populur_id_eq, Populur.all, :id, :name, {include_blank: '指定なし'},{class:"form-control"} %>
         </div>
       </div>
     </div>
